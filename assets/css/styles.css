@@ -14,3 +14,8 @@ a:hover {
   -webkit-transition: all 0.2s ease-in-out;
 }
 
+a {
+  color: var(--bs-link-color);
+  text-decoration: none;
+}
+
