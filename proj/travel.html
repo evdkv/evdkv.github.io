@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2ECTC50R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W2ECTC50R8');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>U.S. Officials Travel Analysis | Projects</title>
+    <link rel="canonical" href="https://evdkv.github.io/proj/travel">
+    <meta property="og:url" content="https://evdkv.github.io/proj/travel">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="kKYmOHuXKKomaaao17XF9eVI75qv9y08D-nus18byD8">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="../assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-center">
+    <nav class="navbar navbar-light navbar-expand bg-dark py-3" style="height: 60px;margin-bottom: 0px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="color: rgb(255, 255, 255);"><span style="color: var(--bs-gray-600);">evdkv</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="background: var(--bs-gray-dark);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active link-secondary" href="/">home</a></li>
+                    <li class="nav-item"><a class="nav-link link-light" href="https://evdkv.github.io/proj/">projects</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container d-inline-block" style="width: 827px;"><img class="img-fluid border rounded" src="../assets/img/thumbnail_gradient.jpg" style="width: 804px;margin-top: 60px;position: static;display: block;">
+        <p style="text-align: left;color: var(--bs-blue);font-size: 19px;margin-bottom: -6px;margin-top: 22px;">Project</p>
+        <h1 class="text-start" style="margin-top: 0px;margin-bottom: 19px;">U.S. Officials Travel Analysis</h1>
+        <div class="d-flex" style="margin-bottom: 9px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="../assets/img/profile_pic.jpg">
+            <div>
+                <p class="fw-bold mb-0">Tolya Evdokimov</p>
+                <p class="text-muted mb-0" style="text-align: left;">Author</p>
+            </div>
+        </div>
+        <p class="text-start text-muted">#unsupervised_learning #natural_language_processing #data_science</p>
+        <p class="fw-light" style="text-align: left;font-size: 19px;">The inspiration for this small project came from some work that I've done for my intro data science class. I was working with an amazing "U.S. officials gifts" dataset scraped by <a href="https://www.alexcookson.com/post/what-can-we-learn-from-diplomatic-gifts/">Alex Cookson</a> and found some interesting spikes in foreign officials gift-giving during some months and was wondering whether this could be correlated with the foreign travel of some U.S. officials. I came across a <a href="https://history.state.gov/departmenthistory/travels">U.S. Historian page</a> dedicated to documenting foreign travel of all U.S. presidents and secretaries and thought that it might be an interesting dataset to look at on its own.</p>
+        <p><em>The link to the GitHub Repo for the project is at the bottom of the page.</em></p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">The Question</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;">Have you thought about how often a president might travel and where they usually go? The first thing that comes to my naïve mind is vacation&nbsp;🌴. You might think about meetings, summits, funerals perhaps? As we will see, it can get a bit more interesting, ...kind of.<br><br>To guide my presidential travel exploration I want to set a few research questions:<br><br><em>• How the travel of a president and a secretary is different (both in "content" and length)?</em><br><em>• What are the most popular reasons for a U.S. official to travel abroad?</em><br><em>• Are the reasons for travel different across countries?</em></p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">The Data</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;">The raw data were scraped from the website using BeautifulSoup. The raw data sample is shown below and is available in the project GitHub repo. Here is a short data dictionary:<br><br><em>•&nbsp;</em><strong><em><span style="color: rgb(214, 0, 158);">visit_type</span></em></strong><em> </em>[chr]<em>:&nbsp;</em>who visited a particular country (president/secretary)<br><em>•&nbsp;</em><strong><em><span style="color: rgb(214, 0, 158);">name</span></em></strong><em> </em>[chr]<em>: </em>name of the president/secretary<br><em>•&nbsp;</em><strong><em><span style="color: rgb(214, 0, 158);">country</span></em></strong><em> </em>[chr]<em>:</em> country visited<br><em>•&nbsp;</em><strong><em><span style="color: rgb(214, 0, 158);">locale</span></em></strong><em> </em>[chr]<em>:</em> city/region visited<br><em>•&nbsp;</em><strong><em><span style="color: rgb(214, 0, 158);">remarks</span></em></strong> [chr]: the description of the visit provided by the U.S. Historian page<br><em>•&nbsp;</em><strong><em><span style="color: rgb(214, 0, 158);">date</span></em></strong>&nbsp;[chr]: date range of the visit<br><br></p><div class="table-responsive">
+<table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th>visit_type</th>
+            <th>name</th>
+            <th>country</th>
+            <th>locale</th>
+            <th>remarks</th>
+            <th>date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>president</td>
+            <td>Woodrow Wilson</td>
+            <td>United Kingdom</td>
+            <td>Bermuda</td>
+            <td>Vacation. [Visit made as President-elect.]</td>
+            <td>&quot;November 18–December 13, 1912&quot;</td>
+        </tr>
+        <tr>
+            <td>secretary</td>
+            <td>John Foster Dulles</td>
+            <td>Pakistan</td>
+            <td>Karachi</td>
+            <td>Attended Second SEATO Council Meeting.</td>
+            <td>&quot;March 5–9, 1956&quot;</td>
+        </tr>
+        <tr>
+            <td>president</td>
+            <td>Donald J. Trump</td>
+            <td>Switzerland</td>
+            <td>Davos</td>
+            <td>Attended the 2018 World Economic Forum.</td>
+            <td>&quot;January 24–26, 2018&quot;</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">The dataset clearly needs quite a bit of cleaning and transformation to be ready for the analyses. Since I will primarily focus on the textual portion of the data, I cleaned capitalization and punctuation + removed any other non-word symbols like digits, brackets, etc.. Finally, I lemmatized the words using <strong>nltk</strong> <strong>WordNetLemmatizer</strong>.<br><br>To standardize the dates I broke them up into start date and end date of the visit as well as transformed them into the standard ISO format. There were several UTF-8 translation artifacts that I also removed. The tidy dataset sample is shown below (<em>note that the text here is not cleaned yet</em>):</p><div class="table-responsive">
+<table class="table table-hover table-sm">
+    <thead>
+        <tr>
+            <th>event_id</th>
+            <th>visit_type</th>
+            <th>name</th>
+            <th>country</th>
+            <th>locale</th>
+            <th>remarks</th>
+            <th>date_start</th>
+            <th>date_end</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>president</td>
+            <td>William Howard Taft</td>
+            <td>Panama</td>
+            <td>Colon</td>
+            <td>Inspected construction of Panama Canal....</td>
+            <td>1909-01-29</td>
+            <td>1909-02-07</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>president</td>
+            <td>William Howard Taft</td>
+            <td>Panama</td>
+            <td>Panama City</td>
+            <td>Inspected construction of Panama Canal....</td>
+            <td>1909-01-29</td>
+            <td>1909-02-07</td>
+        </tr>
+        <tr>
+            <td>664</td>
+            <td>president</td>
+            <td>Barack Obama</td>
+            <td>Norway</td>
+            <td>Oslo</td>
+            <td>Met with King Harald V and Queen Sonja....</td>
+            <td>2009-12-10</td>
+            <td>2009-12-11</td>
+        </tr>
+        <tr>
+            <td>804</td>
+            <td>secretary</td>
+            <td>Elihu Root</td>
+            <td>Brazil</td>
+            <td>Pernambuco</td>
+            <td>Attended Third International....</td>
+            <td>1906-07-17</td>
+            <td>1906-08-07</td>
+        </tr>
+        <tr>
+            <td>804</td>
+            <td>secretary</td>
+            <td>Elihu Root</td>
+            <td>Brazil</td>
+            <td>Bahia</td>
+            <td>Attended Third International....</td>
+            <td>1906-07-17</td>
+            <td>1906-08-07</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">There is one very important caveat with the tidy dataset: the <strong><span style="color: rgb(214, 0, 158);">event_id </span></strong><span style="color: rgb(0, 0, 0);">feature describes a unique country visit, not a unique city/region visit. I separated city/regions into several rows to ease the by-city analysis (and also to put the dataset into </span><a href="https://en.wikipedia.org/wiki/First_normal_form"><span style="color: rgb(10, 88, 202);">1NF</span></a><span style="color: rgb(0, 0, 0);">). This does create a lot of redundancy in the data, but if city/region is not important, it is also easy to drop the duplicates.</span></p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Exploratory Data Analysis (EDA)</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Before we I dive into more complex modeling, I want to do some exploratory analyses looking at some basic trends in the data. There are a lot of components and potential things to do, but I will just focus in on a few basic plots and one more complex one that required a little more feature engineering.</p><img class="img-fluid" src="../assets/img/trips_pres.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Overall, it looks like secretaries travel more in general. Bush, Clinton, and Obama have the most trips out of all presidents, and Kerry, Rice, and Shultz have the most out of the secretaries. On average, presidents have around 40 foreign trips during their term, while secretaries have around 100. Next, let's look where most of the trips happen.</p><img class="img-fluid" src="../assets/img/trips_country.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">By far, the most visited country by the U.S. officials is the United Kingdom which makes sense since UK is one of the largest U.S. allies. UK is then followed by France, then the countries for president and secretary change. I found the fact that presidents travel disproportionately more to Vatican City particularly interesting. Presidents usually meet the pope and attend events there, but secretaries travel there less. Each country visited by a president gets around 13.6 visits from them on average, while each country visited by a secretary gets around 54.4 visits.<br><br>Finally, as a part of EDA, I would like to look at average number of days in a trip by year.</p><img class="img-fluid" src="../assets/img/lm.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">To make this plot I first calculated the time for the trip (there were many zeros for one-day trips), then I averaged those times by year. I also calculated the proportion of trips each year attended by a secretary to get an understanding on how travel has changed over time. I've fit the linear regression model to see the trend.<br><br>It is very clear that in the past, U.S. officials were more likely to travel for longer. There were also a few years when proportion of presidents traveling was almost the same or higher compared to secretaries. There was also a lot of variability in the travel length between around 1910s and 1960s which is very interesting, however I would need more information to interpret that. However, as the time progressed, we see less time per trip and less trips per president. There is also a significant dip in 2020 likely due to the COVID-19 pandemic.<br><br>Now that we have covered the basic trends, let's move on to analyzing the textual data.</p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">The most relevant keywords (class-based TF-IDF)</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">TF-IDF is a powerful scaling technique often used as an input to other unsupervised models. It also can be used on its own to look at the most descriptive terms in a document. The standard <strong>TfIdfVectorizer</strong> supplied by scikit-learn has an optimized and stable implementation which works great when looking at the by-document TF-IDF vectors.<br><br>However, our travel dataset has several limitations. First, short documents, just like in our dataset, make it hard to uncover any meaningful trends or interesting terms since documents are succinct enough to get this information by just eyeballing the document. Second, the documents in the dataset have terms that are quite repetitive, so names of the officials tend to stand out more making it hard to see if there are any other trends that might be overshadowed by names otherwise.<br><br>Class-based TF-IDF is a great solution that will hopefully provide us with some more interesting information. Instead of looking at the documents, I will collapse all of the documents into several big clusters based on a label. Labels like <strong><span style="color: rgb(214, 0, 158);">country</span></strong> or <strong><span style="color: rgb(214, 0, 158);">visit_type</span></strong> are already provided in the dataset. To make the process easier I will use a small wrapper around <strong>CountVectorizer </strong>written by <a href="https://github.com/MaartenGr">Maarten Grootendorst </a>called c-TF-IDF which will make the training process easier. So let's dive in!</p><img class="img-fluid" src="../assets/img/pres_sec_kw.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">First, I plotted the TF-IDF by visit type (president or secretary). Although, there are no very clear distinctions here, some terms do stand out. Term <strong><em>summit</em></strong><em>&nbsp;</em>appears only in the president top 20 terms which probably means that this is one of the most common reasons for presidential travel.<br><br>Presidents also tend to give&nbsp;<strong><em>addresses </em></strong>during their visits<em>, </em>while secretaries usually <strong><em>accompany</em></strong>&nbsp;presidents<strong>. </strong>Also, secretaries tend to meet disproportionately more <strong><em>foreign ministers</em></strong><em>,</em><strong><em> </em></strong>while presidents usually meet <strong><em>prime ministers</em></strong> and <strong><em>other presidents</em></strong>. Now let's move on to the analysis by persona.</p><img class="img-fluid" src="../assets/img/pres_keywords.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Here I plotted TF-IDF scores by presidents I thought would be interesting to look at and the ones that had more data. The trends seem pretty uniform: there is no specific difference between the presidents. They usually travel to attend summits, meet with foreign leaders, and give addresses.&nbsp;<br><br>A few fun facts I found after looking at the data: Franklin Roosevelt went on 6 fishing trips, one of which was in Canada and the other 5 in the U.K. He also made many en route stops in other countries and had many informal trips as well.</p>
+        <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/roosevelt.jpg">
+            <figcaption class="figure-caption" style="font-size: 8px;">President Roosevelt fishing in the Gulf of Mexico. May, 1937. Credit:&nbsp;National Archives and Records Administration. <a href="https://www.whitehousehistory.org/photos/presidential-vacations-retreats-president-franklin-d-roosevelt-fishing">Source</a></figcaption>
+        </figure>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Lastly, I would like to look at the keywords across countries to see if any interesting trends arise.</p><img class="img-fluid" src="../assets/img/countries_keywords.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Here I picked out a few countries, the keywords of which I thought were interesting to look at. Visits to Vatican City often seems to be associated with being present as the audience with pope. Also, presidents met twice with Gorbachev during a conference in Malta. I first thought that there is something special about meeting him in Malta, but it seems like it stands out more due to how small the class partition is <em>(which is true for almost all country classes).</em><br><br>H.W. Bush visited Czechoslovakia once to attend the first anniversary of "<a href="https://en.wikipedia.org/wiki/Velvet_Revolution">Velvet Revolution</a>." Secretary George Shultz went to Bahamas for vacation twice during his term. Trips to Papua New Guinea are usually associated with visits to the mangrove reforestation efforts, while very few trips to Sierra Leone are associated with visits to Amputee and War Wounded Camp at Murray Town.<br><br>Again, these were extracted from very small class corpora, so they are pretty obvious.</p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Topic Modeling (NMF, PCA, and t-SNE)</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Now I would like to see if any of the terms cluster together of form any groups. I will use NMF (Non-Negative Matrix Factorization) to approximate the topics. I will use 10 topics, but, as we will see later, most documents will be clustered in the first few topics anyway.&nbsp;<br><br>In general, NMF uses two matrices: Document/Topic and Topic/Term (W and H) to approximate the Document/Term matrix (V). H and W are initialized randomly, then the algorithm slowly minimizes the loss function to best approximate V. I will use the <strong>scikit </strong>implementation to conduct my analyses.</p>
+        <figure class="figure"><img class="img-fluid figure-img" src="../assets/img/nmf.png" width="500">
+            <figcaption class="figure-caption">NMF visualization. Credit: Wikipedia. <a href="https://en.wikipedia.org/wiki/Non-negative_matrix_factorization">Source</a></figcaption>
+        </figure>
+        <p></p>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Alright, so we've fit the model, now let's look at the top 6 terms associated with each topic and the document distribution across topics.<br><br>It seems like Topic 0 contains the most documents and it is also visible in the PCA plot below. Topic 9 contains only one document.&nbsp;</p><img class="img-fluid" src="../assets/img/topic_counts.png" width="800">
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">Let's now dive deeper into the top terms from each topic.<br><br><strong><span style="color: rgb(214, 0, 158);">Topic 0</span>: russian, discuss, attend, secretary, minister, foreign</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 1:</span> inauguration, mubarak, address, assad, abbas, president</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 2:</span> nacc, cento, council, attend, ministerial, nato</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 3:</span> assad, discuss, process, east, middle, peace</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 4:</span> turkish, discuss, chinese, israeli, senior, officials</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 5:</span> informal, reagan, accompany, official, state, visit</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 6:</span> forum, apec, conference, economic, attend, summit</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 7:</span> reagan, nixon, clinton, president, bush, accompany</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 8:</span> olmert, israeli, benjamin, netanyahu, minister, prime</strong><br><strong><span style="color: rgb(214, 0, 158);">Topic 9:</span> moscow, overnight, return, stop, en, route</strong><br><br>The topics seem pretty coherent, so let's dissect a few interesting ones. Topic 1 seems to deal with the middle eastern visits of the U.S. officials and other foreign leaders' inauguration visits. Some of inaugurations are in fact associated with middle east, but most of them happen all over the globe. On a similar note, Topic 3 relates to the middle east peace discussion visits which makes sense since it's one of the largest tracks in the American politics.<br><br>Topics 2 and 6 seem to tap into forums, conferences, and alliances. Topic 2 deals with military conferences and alliances like NATO, NACC, and CENTO, while Topic 6 covers economic forums like APEC.&nbsp;<br><br>Finally, Topic 0 is dedicated to the U.S. officials' (secretaries specifically) meetings with Russian foreign ministers. I was quite surprised to see ho often U.S. secretaries meet with Russian officials. These results make sense and cover a lot of ground in terms of where presidents and secretaries usually go, but there are still some interesting nuggets that are usually uncovered in smaller and more obscure visits (like in the TF-IDF analysis).<br><br>Now I would like to look at the spatial representations of the data. Although I like those embedding because they usually make cool shapes, I will still try to interpret some of the shapes just for fun. First, I will make an interactive PCA plot of all documents in the dataset. PCA preserves global relationships in the data, so it's great for looking at the dataset in big picture. t-SNE, on the other hand preserves local relationships, so the plot will always look like a blob and we will look at some specific local clusters for interpretation.</p>
+        <div class="ratio ratio-1x1"><iframe src="../assets/html/pca_topics.html" allowfullscreen=""></iframe></div>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 0px;margin-bottom: 50px;">Looks cool right? Here each point represents a document along 3 axes which correspond with the first 3 principal components. Points are colored by their topic from the NMF analysis. It's also very easy to see the most dominant topics here.&nbsp;<br><br>One interesting thing that I noticed is that the graph shoots off in 4 directions. If you look at the documents in those 4 parts of the graph, you will see that each would consistently start with 4 different verbs: <strong>discuss</strong>, <strong>attend</strong>, <strong>meet</strong>, and <strong>accompany. </strong>It makes sense from the analysis standpoint — if documents consistently start with the same term due to the formulaic nature of the dataset, then they will be located along similar directions in the plot. I think those 4 terms sum up the travel patterns really well: meeting other leaders, discussing issues, attending events, and accompanying presidents (secretaries) seem to be the most common reasons for secretary/president foreign travel.&nbsp;<br><br>Now, let's look at t-SNE (coloring is by NMF topics).</p>
+        <div class="ratio ratio-1x1"><iframe src="../assets/html/tsne_topics.html" allowfullscreen=""></iframe></div>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 0px;">Conclusion</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">In this analysis I looked at the U.S. Officials travel dataset. I found that U.K. and France are the top 2 most traveled to countries, secretaries travel significantly more and tend to accompany presidents. The travel patterns suggest that U.S. officials now travel less on average compared to the data from around 70 years ago. Presidents tend to have different reasons for travel, but the results from topic modeling and PCA vectorization suggest that the main reasons are attending events, discussing issues, and meeting with other leaders.</p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Limitations and future analyses</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 50px;">There is a lot that can be done with this dataset, especially with its non-textual components. For example, we can look at how the language of reporting has changed over time. But here comes the biggest limitation of the dataset and the analyses — the size. Text remarks were very short and succinct and often formulaic which prevented me from conducting any larger analyses on text, but class-based were very helpful and uncovered some interesting trends.<br><br>Hopefully, you will find this dataset helpful and do some cool analyses with it too. The link to the GitHub repo is attached below. :)</p><img class="img-fluid" src="../assets/img/license.png" width="88" height="31" style="margin-right: 10px;text-align: left;"><a class="btn btn-dark border rounded" role="button" style="font-size: 13px;" href="https://github.com/evdkv/pres-travel-analysis"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github" style="font-size: 17px;margin-right: 10px;">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>GitHub Repo</a>
+    </div>
+    <footer class="text-center bg-dark" style="margin-top: 62px;position: sticky;display: block;">
+        <div class="container text-white py-4 py-lg-5">
+            <p class="text-muted mb-0">© Tolya Evdokimov</p>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
