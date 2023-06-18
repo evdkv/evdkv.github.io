@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2ECTC50R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W2ECTC50R8');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Eye Movement Cleaning | Projects</title>
+    <link rel="canonical" href="https://evdkv.github.io/New Folder/eyemovement_cleaning.html">
+    <meta property="og:url" content="https://evdkv.github.io/New Folder/eyemovement_cleaning.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="kKYmOHuXKKomaaao17XF9eVI75qv9y08D-nus18byD8">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="../assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-center">
+    <nav class="navbar navbar-light navbar-expand bg-dark py-3" style="height: 60px;margin-bottom: 0px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="color: rgb(255, 255, 255);"><span style="color: var(--bs-gray-600);">evdkv</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="background: var(--bs-gray-dark);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active link-secondary" href="/">home</a></li>
+                    <li class="nav-item"><a class="nav-link link-light" href="https://evdkv.github.io/proj/">projects</a></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" style="max-width: 827px;"><img class="img-fluid border rounded" src="../assets/img/thumbnail_eye.jpg" style="width: 804px;margin-top: 60px;position: static;display: block;">
+        <p style="text-align: left;color: var(--bs-blue);font-size: 19px;margin-bottom: -6px;margin-top: 22px;">Blog Post</p>
+        <h1 class="text-start" style="margin-top: 0px;margin-bottom: 19px;">Cleaning eye movement data in R</h1>
+        <div class="d-flex" style="margin-bottom: 9px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="../assets/img/profile_pic.jpg">
+            <div>
+                <p class="fw-bold mb-0">Tolya Evdokimov</p>
+                <p class="text-muted mb-0" style="text-align: left;">Author</p>
+            </div>
+        </div>
+        <p class="text-start text-muted">#data_pipeline #data_analysis #eye_movements #data_science #R</p>
+        <p class="fw-light" style="text-align: left;font-size: 19px;">Clear data pipelines are super important for getting clear and consistent results from the analyses conducted in both research and industry settings. Sometimes data collected through proprietary software locks you in in its ecosystem to promote its own software. I thought it would be interesting to pull some pieces of code I used to mechanically clean and put those data in the "semi-tidy" format — just enough to conduct the necessary tests.<br><br>Specifically, I used this notebook I'm about to walk you through in the project related to visual search conducted by <a href="https://arrynrobbins.com">Dr. Arryn Robbins</a>. I primarily used <strong>R</strong> and <strong>tidyverse&nbsp;</strong>for cleaning as well as some regex and string manipulation to get the feature names in order. Hopefully, this will be interesting and will highlight some of the difficulties related to using proprietary software for stimuli presentation and data collection.</p>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Behavioral Data</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 40px;margin-bottom: 20px;">I will start by cleaning and preprocessing the behavioral dataset which mostly contains responses to questions inside of the experiment and the reaction times for every trial.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step1.1.R"></script>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">I read in the data and examine the dataset. The first problem is very obvious — column names.&nbsp; Many of them contain symbols that are considered special in R and many other programming languages like square brackets in <em>BlockNum[Session]&nbsp;</em><strong>&nbsp;</strong>or<strong>&nbsp;</strong>dots in <em>PracticeList.Sample. </em>There are also combination of both like in <em>Probe.Device[Block]</em>. So it is absolutely necessary to fix those names to start any kind of data analysis. I will just rename everything with some regex and a small function below.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step1.2.R"></script>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">Before moving on, I will examine the response accuracy rate of every participant and manually remove participants whose accuracy was below a certain level. Here I end up not removing any participants.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step1.3.R"></script>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Eye Movement Data</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">Now I will do some work with the eye movement dataset. First, load the CSV.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step2.1.R"></script>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">In a visual search experiment, objects that participants are asked to find are called targets, and all other objects are distractors. By default, the program adds T or D in front of the stimuli file names to mark whether it is a target or a distractor, so to make future analyses easier, I will create another feature to mark them explicitly. I will also mark whether a particular stimulus was fixated on or not with either 1 or 0.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step2.3.R"></script>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">I will now work with reaction times to filter out some outlier data points. So I will calculate the 2.5 standard deviations above the mean of the reaction times in the whole dataset and then filter out trials with reaction times that fall outside of 200 ms and the 2.5 SD ms range.&nbsp;</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step2.4.R"></script>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">In this experiment, we were analyzing targets only so I will only include the targets that got a fixation. I will also filter out undefined trial blocks.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step2.5.R"></script>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Join Tables</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">It is time to join behavioral and the eye movement data. I joined the data using 3 features, but before that, I needed to convert block number to an integer to match the other dataset. After I join the tables, I actually convert a bunch of important features to numeric values and I was quite surprised to find out they were not numeric in the first place. Then I create a new feature — time to press and filter out some invalid values. Finally, I convert column names to lowercase.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step2.6.R"></script>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">Finally, I will add some more features from other tables to prepare the dataset for the analyses. These would be the labels for the object categories and the image MDS distance labels.</p><script src="https://gist.github.com/evdkv/e804af9471a82b3aca34b8febf52402f.js?file=step2.7.R"></script>
+        <h3 class="text-start" style="margin-bottom: 28px;margin-top: 37px;">Conclusion</h3>
+        <p class="fw-light" style="text-align: left;font-size: 19px;margin-top: 20px;margin-bottom: 20px;">This short notebook showed most of the steps I used to preprocess the eye movement data. Most of the code includes steps to make the data analyzable by converting it to the data types compatible with standard types in R. Mainly, I wanted this blog post to summarize some standard steps I would usually perform to clean the data from EPrime. Hopefully, this notebook will help someone dealing with a similar data outputs.</p><img class="img-fluid" src="../assets/img/license.png" width="88" height="31" style="margin-right: 10px;text-align: left;"><a class="btn btn-dark border rounded" role="button" style="font-size: 13px;" href="https://github.com/evdkv/eyemovement-cleaning"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-github" style="font-size: 17px;margin-right: 10px;">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+            </svg>GitHub Repo</a>
+    </div>
+    <footer class="text-center bg-dark" style="margin-top: 62px;position: sticky;display: block;">
+        <div class="container text-white py-4 py-lg-5">
+            <p class="text-muted mb-0">© Tolya Evdokimov</p>
+        </div>
+    </footer>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
