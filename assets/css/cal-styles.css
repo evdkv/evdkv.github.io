@@ -1,0 +1,15 @@
+.square {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #555;
+}
+  
+p {
+    margin: 0px;
+    font-size: small;
+    padding-left: 7px;
+    padding-top: 2px;
+    color: var(--bs-body-bg);
+    height: 15px;
+}
