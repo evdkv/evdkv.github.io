@@ -1,5 +1,7 @@
-import { initializeApp } from "./firebase-app";
-import { getAnalytics } from "./firebase-analytics";
+//import { initializeApp } from "./firebase-app";
+//import { getAnalytics } from "./firebase-analytics";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAz6i0xdk6-AnIcQiv7OO2lEicoxYluUYs",
@@ -12,8 +14,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const app = firebase.initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 const db = firebase.firestore();
 
 let eventArr = [];
