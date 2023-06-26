@@ -3,9 +3,9 @@
 // import * as firebase from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js";
 // import "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js";
 
-import firebase from "firebase/compat/app";
-// Required for side-effects
-import "firebase/firestore";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+import { collection, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
 
 const firebaseConfig = {
   apiKey: "AIzaSyAz6i0xdk6-AnIcQiv7OO2lEicoxYluUYs",
@@ -18,9 +18,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
-const db = firebase.firestore();
+const db = getFirestore();
 
 let eventArr = [];
 
