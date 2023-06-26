@@ -1,7 +1,11 @@
 //import { initializeApp } from "./firebase-app";
 //import { getAnalytics } from "./firebase-analytics";
-import * as firebase from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js";
-import "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js";
+// import * as firebase from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js";
+// import "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js";
+
+import firebase from "firebase/compat/app";
+// Required for side-effects
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAz6i0xdk6-AnIcQiv7OO2lEicoxYluUYs",
