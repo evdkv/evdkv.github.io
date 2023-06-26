@@ -1,4 +1,4 @@
-var moment = require('moment');
+// var moment = require('moment');
 
 class CalEvent {
     constructor(id = 1 , name = "Me", day = "mon", time_begin = "", time_end = "") {
