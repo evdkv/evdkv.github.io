@@ -4,8 +4,8 @@
 // import "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
-import { collection, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
+import { collection, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAz6i0xdk6-AnIcQiv7OO2lEicoxYluUYs",
@@ -19,20 +19,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 const db = getFirestore();
+
+
+const q = query(collection(db, "cal-events"));
+const querySnapshot = await getDocs(q);
 
 let eventArr = [];
 
-db.collection("cal-events").get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            eventArr.push(new CalEvent(doc.id, doc.name, doc.day, doc.time_begin, doc.time_end));
-        });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
+querySnapshot.forEach((doc) => {
+    eventArr.push(new CalEvent(doc.id, doc.name, doc.day, doc.time_begin, doc.time_end));
+});
 
 eventArr.forEach((ev) => {
     if (eventArr.indexOf(ev) === 0) {
@@ -42,4 +39,4 @@ eventArr.forEach((ev) => {
     } else {
         ev.addEvent(eventArr[(eventArr.indexOf(ev) - 1)])
     }
-})
+});
