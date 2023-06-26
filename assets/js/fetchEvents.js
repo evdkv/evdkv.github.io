@@ -1,6 +1,6 @@
 //import { initializeApp } from "./firebase-app";
 //import { getAnalytics } from "./firebase-analytics";
-import firebase from "firebase/compat/app";
+import firebase from "firebase-compat-app/compat/app";
 import "firebase/firestore";
 
 const firebaseConfig = {
