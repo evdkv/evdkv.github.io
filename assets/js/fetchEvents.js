@@ -24,11 +24,18 @@ db.collection("cal-events").get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             eventArr.push(new CalEvent(doc.id, doc.name, doc.day, doc.time_begin, doc.time_end));
-            
         });
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
     });
 
-console.log(eventArr);
+eventArr.forEach((ev) => {
+    if (eventArr.indexOf(ev) === 0) {
+        ev.addEvent();
+    } else if (eventArr.indexOf(ev) === -1) {
+        console.log("Index is -1!");
+    } else {
+        ev.addEvent(eventArr[(eventArr.indexOf(ev) - 1)])
+    }
+})
