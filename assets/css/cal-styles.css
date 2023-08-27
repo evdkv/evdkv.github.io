@@ -29,3 +29,11 @@ p {
     color: var(--bs-body-bg);
     height: 15px;
 }
+
+thead th {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
