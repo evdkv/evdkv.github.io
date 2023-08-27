@@ -3,11 +3,27 @@
     width: 50px;
     border-radius: 5px;
     background-color: #555;
+    z-index: 2;
+    position: relative;
+    border: thin solid white;
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
 }
-  
+
+.square:hover {
+    z-index:3 !important;
+    transform: scale(1.05);
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.square:hover + .square-secondary {
+    opacity: 0.2;
+    -webkit-transition: all 0.2s ease-in-out;
+
+}
+
 p {
     margin: 0px;
-    font-size: small;
+    font-size: 12px;
     padding-left: 7px;
     padding-top: 2px;
     color: var(--bs-body-bg);
