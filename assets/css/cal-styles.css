@@ -30,6 +30,24 @@
     position: relative;
 }
 
+.legend-other {
+    height: 20px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #7851A9;
+    z-index: 2;
+    position: relative;
+}
+
+.legend-proj1 {
+    height: 20px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #287d4a;
+    z-index: 2;
+    position: relative;
+}
+
 p {
     margin: 0px;
     font-size: 12px;
