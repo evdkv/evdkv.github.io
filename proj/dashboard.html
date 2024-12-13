@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
+
+<head>
+    <meta charset="utf-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2ECTC50R8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-W2ECTC50R8');
+    </script>
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:5064324,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sound Dashboard | Projects</title>
+    <link rel="canonical" href="https://evdkv.github.io/proj/dashboard">
+    <meta property="og:url" content="https://evdkv.github.io/proj/dashboard">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta name="google-site-verification" content="kKYmOHuXKKomaaao17XF9eVI75qv9y08D-nus18byD8">
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="../assets/css/Navbar-Right-Links-Dark-icons.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body class="text-center">
+    <nav class="navbar navbar-expand bg-dark navbar-light py-3" style="height:60px;margin-bottom:0px;">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="color:rgb(255, 255, 255);"><span style="color:var(--bs-gray-600);">evdkv</span></a><button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler" style="background:var(--bs-gray-dark);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active link-secondary" href="/">home</a></li>
+                    <li class="nav-item"><a class="nav-link link-secondary" href="../../pub/">publications</a></li>
+                    <li class="nav-item"><a class="nav-link link-light" href="../proj/">projects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container d-inline-block" style="max-width:827px;"><img class="rounded img-fluid border" src="../assets/img/dashboard.png" style="width:804px;margin-top:60px;position:static;display:block;" width="803" height="577">
+        <p style="text-align:left;color:var(--bs-blue);font-size:19px;margin-bottom:-6px;margin-top:22px;">Project</p>
+        <h1 class="text-start" style="margin-top:0px;margin-bottom:19px;">Sound Dashboard</h1>
+        <div class="d-flex" style="margin-bottom:9px;"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="../assets/img/profile_pic.jpg">
+            <div>
+                <p class="fw-bold mb-0">Tolya Evdokimov</p>
+                <p class="text-muted mb-0" style="text-align:left;">Author</p>
+            </div>
+        </div>
+        <p class="text-start text-muted">#signal_processing #music_informatics</p>
+        <p class="fw-light" style="text-align:left;font-size:19px;">This is a class project for CMSC 336: Music Informatics. I thought it would be interesting to explore how sound is handled through the Web Audio API and try to visualize different features on a static page.</p>
+        <p><em>The link to the Sound Dashboard is at the bottom of the page.</em></p>
+        <h3 class="text-start" style="margin-bottom:28px;margin-top:37px;">Introduction</h3>
+        <p class="fw-light" style="text-align:left;font-size:19px;">Music dashboards are a popular tool to visualize diﬀerent properties of a sound used in sound<br>engineering, recording studios, and music software like Audacity. The idea of my project is to<br>reproduce such dashboard in the form of a website where a user can upload their own audio and see multiple visualizations live during the sound playback. The idea is also to use the raw audio and implement as many visualizations as possible from scratch using either plotting software or a basic HTML canvas.</p>
+        <h3 class="text-start" style="margin-bottom:28px;margin-top:37px;">Implementation</h3>
+        <p class="fw-light" style="text-align:left;font-size:19px;">I am using plain JavaScript and HTML as a base with WaveSurfer.js as a tool for playback, Web Audio API for streaming audio information live, Plotly.js for dynamic plotting, Tailwind CSS for styling the page, and a WaveSurfer Spectrogram plugin for the STFT visualization.</p><img src="../assets/img/dashboard-proto.png" width="800">
+        <p class="fw-light" style="text-align:left;font-size:19px;margin-top:40px;margin-bottom:50px;">First, I implemented the live DFT plot. I used a Web API Audio object that is connected to WaveSurfer and an audio context analyzer to extract frequency information. I updated the plot every time there is a time update from WaveSurfer during playback.<br><br>Next, I implemented a simple beat detector and a beats per minute display. To detect beats I used a simplified version of a beat detection algorithm. I used the lower frequencies and averaged their amplitudes. If an amplitude reaches a threshold that I pre-defined experimentally, then a beat will be detected, counted, and visualized as a red dot on the screen for 150 ms. The BPM calculation counts the number of beats every 10 seconds, multiplies them by 6, and updates the number on the screen.<br><br>To visualize the waveform, I used a Web Audio API utility to copy the current waveform data at a<br>particular point in time and plot it using an HTML canvas. To represent loudness, I use a bar<br>visualization that raises and lowers based on the loudness of the sound. I used the Root Mean Square calculation. Based on the RMS value, I calculate the loudness and update the bar visualization on the HTML canvas.<br><br>I also implemented the ability to upload your own audio and clear the audio to upload another one.</p>
+        <h3 class="text-start" style="margin-bottom:28px;margin-top:37px;">Results</h3>
+        <p class="fw-light" style="text-align:left;font-size:19px;margin-top:40px;margin-bottom:0px;">As a result of the project, I have a static HTML page that implements a dashboard using JavaScript. You are welcome to see it in action below</p>
+        <figure class="figure"></figure>
+        <h3 class="text-start" style="margin-bottom:28px;margin-top:37px;"></h3>
+        <p class="fw-light" style="text-align:left;font-size:19px;margin-top:40px;margin-bottom:50px;"></p>
+        <figure class="figure">
+            <figcaption class="figure-caption"></figcaption>
+        </figure>
+        <p></p>
+        <p class="fw-light" style="text-align:left;font-size:19px;margin-top:40px;margin-bottom:50px;"></p>
+        <p class="fw-light" style="text-align:left;font-size:19px;margin-top:0px;margin-bottom:50px;"></p><img class="img-fluid" src="../assets/img/license.png" width="88" height="31" style="margin-right:10px;text-align:left;"><a class="btn btn-dark border rounded" role="button" style="font-size:13px;margin-right:10px;" href="https://github.com/evdkv/music-dash"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewbox="0 0 16 16" class="bi bi-github" style="font-size:17px;margin-right:10px;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>GitHub Repo</a><a class="btn btn-danger border rounded" role="button" style="font-size: 13px;background: var(--bs-link-hover-color);" href="https://evdkv.github.io/music-dash">Sound Dashboard</a>
+    </div>
+    <footer class="text-center bg-dark" style="margin-top:62px;position:sticky;display:block;">
+        <div class="container text-white py-4 py-lg-5">
+            <p class="text-muted mb-0">© Tolya Evdokimov</p>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
