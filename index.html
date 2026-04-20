@@ -1,121 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2ECTC50R8"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-W2ECTC50R8');
-    </script>
-    <script src="https://kit.fontawesome.com/6de03e651c.js" crossorigin="anonymous"></script>
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:5064324,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Tolya Evdokimov</title>
-    <link rel="canonical" href="https://evdkv.github.io/">
-    <meta property="og:url" content="https://evdkv.github.io/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="google-site-verification" content="kKYmOHuXKKomaaao17XF9eVI75qv9y08D-nus18byD8">
-    <meta property="og:type" content="website">
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "WebSite",
-            "name": "Tolya Evdokimov",
-            "url": "https://evdkv.github.io"
-        }
-    </script>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
-    <link rel="stylesheet" href="assets/css/Navbar-Right-Links-Dark-icons.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tolya Evdokimov</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2ECTC50R8"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-W2ECTC50R8');
+  </script>
+
+  <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:5064324,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link rel="canonical" href="https://evdkv.github.io/">
+  <meta property="og:url" content="https://evdkv.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="google-site-verification" content="kKYmOHuXKKomaaao17XF9eVI75qv9y08D-nus18byD8">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "WebSite",
+          "name": "Tolya Evdokimov",
+          "url": "https://evdkv.github.io"
+      }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body data-root="./">
 
-<body>
-    <nav class="navbar navbar-light navbar-expand bg-dark py-3" style="height: 60px;margin-bottom: 0px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#" style="color: rgb(255, 255, 255);"><span style="color: var(--bs-gray-600);">evdkv</span></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1" style="background: var(--bs-gray-dark);"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active link-light" href="/">home</a></li>
-                    <li class="nav-item"><a class="nav-link link-secondary" href="pub/">publications</a></li>
-                    <li class="nav-item"><a class="nav-link link-secondary" href="proj/">projects</a></li>
-                    <li class="nav-item"></li>
-                </ul>
-            </div>
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <div class="container">
+    <header class="hero">
+      <div class="hero-inner">
+
+        <!-- photo -->
+        <img
+          class="hero-photo"
+          src="assets/profile.jpg"
+          alt="Portrait of Tolya Evdokimov"
+          onerror="this.style.background='#e8e8ed'"
+        />
+
+        <div class="hero-text">
+          <!--  name -->
+          <h1 class="hero-name">Tolya Evdokimov</h1>
+
+          <!-- title / role -->
+          <p class="hero-title">PhD Student @ NYU Tandon</p>
+
+          <!--  university / lab -->
+          <p class="hero-affiliation">
+            tolya [dot] e [at] nyu [dot] edu
+          </p>
+
+          <div class="hero-links">
+            <a class="pill" href="https://orcid.org/0009-0007-1919-3446"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,0a8,8,0,1,0,8,8A8,8,0,0,0,10,0ZM6.912,2.919a.631.631,0,1,1-.631.631A.634.634,
+                    0,0,1,6.912,2.919ZM6.431,4.944h.963v6.693H6.431Zm2.375,0h2.6a3.31,3.31,0,0,1,
+                    3.563,3.35,3.383,3.383,0,0,1-3.55,3.35H8.806Zm.963.868v4.963H11.3a2.457,2.457,0,
+                    0,0,2.681-2.481A2.423,2.423,0,0,0,11.25,5.812Z"/>
+              </svg>
+              ORCID
+            </a>
+
+            <a class="pill" href="https://scholar.google.com/citations?user=H4om80wAAAAJ&hl=en"
+               target="_blank" rel="noopener">
+              <!-- Scholar icon -->
+              <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,0,2,6.334,4.963,8.746a5.661,5.661,0,0,1,10.076,0L18,6.334Zm0,
+                6.666a4.667,4.667,0,0,0-4.666,4.667h0A4.666,4.666,0,1,0,10,6.666Z"/>
+              </svg>
+              Scholar
+            </a>
+
+            <a class="pill" href="https://www.linkedin.com/in/evdkmv/"
+               target="_blank" rel="noopener">
+              <!-- Scholar icon -->
+              <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4,1A1,1,0,0,0,3,2V14a1,1,0,0,0,1,1H16a1,1,0,0,0,1-1V2a1,1,0,0,0-1-1ZM6.1,2.926a1.2,1.2,0,
+                0,1,1.2,1.2h0a1.2,1.2,0,0,1-1.2,1.2h0a1.2,1.2,0,0,1-1.2-1.2h0A1.2,1.2,0,0,1,6.1,2.926Zm6.386,3.207A2.344,
+                2.344,0,0,1,14.9,8.74V12.9H12.859V9.451c0-2.071-2.472-1.914-2.472,0V12.9H8.35V6.336h2.037v.883A2.4,2.4,0,0,1,12.484,6.133Zm-7.42.2H7.115V12.9H5.064Z"/>
+              </svg>
+              LinkedIn
+            </a>
+
+          </div>
         </div>
-    </nav>
+      </div>
+    </header>
+  </div>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
     <div class="container">
-        <div class="row justify-content-evenly" style="margin-top: 47px;">
-            <div class="col-md-6 col-xxl-6 align-self-center" style="padding-left: 7px;margin-bottom: 32px;">
-                <h4 class="text-start" style="margin-bottom: 10px;">about</h4>
-                <p class="lead">Привет👋&nbsp; My name is Tolya. I am a PhD student at NYU Tandon working with Qi Sun at <a href="https://immersivecomputinglab.org/"><span style="color: rgb(90, 30, 202);">Immersive Computing Lab</span></a>. I am interested in neural representations, compression, and rendering. Previously, I worked at &nbsp;<a href="https://arrynrobbins.com/"><span style="color: rgb(70, 144, 137);">Robbins Lab</span></a>&nbsp;<img width="24" height="17" src="assets/img/robbins_lab_icon.png">, University of Richmond on attention, search, and eye tracking.</p>
-                <p class="lead">In my free time, I like to ice skate, bake, and run.</p>
-            </div>
-            <div class="col text-center order-first" style="margin-bottom: 33px;padding-right: 20px;padding-left: 0px;"><img class="rounded-circle" width="228" height="228" src="assets/img/profile_pic.jpg" style="text-align: center;margin-bottom: 20px;">
-                <h2 class="text-center" style="margin-bottom: -1px;">Tolya Evdokimov</h2>
-                <p class="fs-5" style="color: var(--bs-gray-600);margin-bottom: -3px;">CS PhD @ NYU Tandon</p>
-                <p class="fs-5" style="color: var(--bs-link-hover-color);margin-left: 15px;margin-bottom: -3px;">Immersive Computing Lab</p>
-                <p class="fs-5" style="color: var(--bs-gray-600);margin-bottom: 14px;">tolya [dot] e [at] nyu [dot] edu</p><a href="https://www.linkedin.com/in/evdkmv/"><i class="fab fa-linkedin" style="font-size: 27px;margin-right: 11px;color: var(--bs-gray-500);"></i></a><a href="https://github.com/evdkv"><i class="fab fa-github" style="font-size: 26px;margin-right: 11px;color: var(--bs-gray-500);"></i></a><a href="https://orcid.org/0009-0007-1919-3446"><i class="fab fa-orcid" style="font-size: 27px;margin-right: 11px;color: var(--bs-gray-500);"></i></a>
-            </div>
-        </div>
-    </div>
+      <p class="section-title">About</p>
+
+      <!-- bio -->
+      <div class="about-text">
+        <p>
+          I am a first-year PhD student in Computer Science at
+          <a href="https://www.nyu.edu">New York University</a>, advised by 
+          <a href="https://qisun.me">Qi Sun</a>. My research focuses on <strong>neural 
+          representations</strong> for image and texture compression, with an emphasis on efficient 
+          GPU implementations and real-time performance.
+        </p>
+        <p>
+          Before my PhD, I completed my BS in Computer Science at the
+          University of Richmond, where I worked with <a href="https://arrynrobbins.com">Arryn Robbins</a> 
+          and <a href="https://finegan-dollak.github.io/">Catherine Finegan-Dollak</a> on webcam eye 
+          tracking.
+        </p>
+      </div>
+
+      <!-- research interest tags -->
+      <!--<div class="tags">
+         <span class="tag">Real-Time Rendering</span> 
+        <span class="tag">Neural Radiance Fields</span>
+        <span class="tag">3D Reconstruction</span>
+        <span class="tag">Differentiable Rendering</span>
+        <span class="tag">Geometry Processing</span>
+      </div>
+    </div>-->
+  </section>
+
+
+  <!-- ============================================================
+       RESEARCH / PUBLICATIONS
+       Each .pub-card is one paper or project.
+       ============================================================ -->
+  <section id="research">
+    <!--
+    -->
+
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8" style="width: 663px;">
-                <div style="margin-bottom: 10px;">
-                <h4 class="text-start" style="margin-bottom: 10px;">publications</h4>
-                <p style="margin-bottom: 5px;padding-bottom: 0px;margin-top: 10px;">Robbins A.,&nbsp;<strong>Evdokimov A.</strong>&nbsp;(2024). Distractor similarity and category variability effects in search. <em>Attention, Perception, & Psychophysics</em>&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="https://doi.org/10.3758/s13414-024-02924-4">doi</a>
-                <p style="margin-bottom: 5px;padding-bottom: 0px;margin-top: 10px;"><strong>Evdokimov A.</strong>, Finegan-Dollak C., Robbins A. (2024, June 4). WEyeDS: A desktop webcam dataset for gaze estimation. [Late-Breaking Work]. ACM Symposium on Eye Tracking Research & Applications, Glasgow, United Kingdom.&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="https://doi.org/10.1145/3649902.3655646">doi</a><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="assets/docs/etra_poster_2024.pdf">poster</a><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 90px;height: 27px;font-size: 12px;margin-right: 10px;" href="https://robbinslab.github.io/weyeds">data & code</a>
-                <p style="margin-bottom: 5px;padding-bottom: 0px;margin-top: 10px;"><strong>Evdokimov A., </strong>Enikeeva A., Luby P., Robbins A.&nbsp;(2024). How Scientists Use Webcams to Track Human Gaze. <em>Front. Young Minds. 12:1259404</em></p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;margin-bottom: 29px;" href="https://doi.org/10.3389/frym.2024.1259404">doi</a>
-                <h4 class="text-start" style="margin-bottom: 10px;">posters &amp; presentations</h4>
-                <p style="margin-bottom: 5px;margin-top: 15px;">Williams N., <strong>Evdokimov A.</strong>, Duinkharjav M., Patney A., Sun Q., Jun J., Rosenholtz R. (2025, May 18). Detection of artifacts in clean and corrupted video pairs is influenced by artifact type and presentation modality [Poster to be Presented]. Vision Sciences Society Meeting, St. Petersburg, FL, United States.&nbsp;<p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="https://www.visionsciences.org/presentation/?id=2256">abstract</a>
-                <p style="margin-bottom: 5px;margin-top: 15px;">Ovalle, C., Wurtzbacher J., <strong>Evdokimov A.</strong>, Dunkelberger R., Wang Y., Kershner A., Robbins A. (2024, November 21). VariCat: A Scene Image Dataset for Search [Conference Poster]. OPAM 32, New York City, NY, United States.&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="assets/docs/opam_poster_2024.pdf">poster</a>
-                <p style="margin-bottom: 5px;margin-top: 15px;"><strong>Evdokimov A.</strong>, Robbins A., (2024, March 1). Expanding the reach of eye tracking in psychology using webcam data collection [Conference Poster]. Eastern Psychological Association Meeting, Philadelphia, PA, United States.&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="assets/docs/epa_poster_2024.pdf">poster</a>
-                <p style="margin-bottom: 15px;margin-top: 15px;">Robbins A., <strong>Evdokimov A.</strong>, (2023, October). Webcam gaze tracking: Insights, challenges, and solutions. [Invited Talk]. Department of Psychology, New Mexico State University, Las Cruces, NM, United States.&nbsp;</p>
-                <!-- <p style="margin-bottom: 5px;"><strong>Evdokimov A.</strong>, Robbins A. (2023, May 20). Differences in similarity effects across target categories [Conference Poster]. Vision Sciences Society Meeting, St. Petersburg, FL, United States.&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="https://doi.org/10.1167/jov.23.9.5874">doi</a><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 63.5859px;height: 27px;font-size: 12px;backdrop-filter: opacity(0.23);-webkit-backdrop-filter: opacity(0.23);opacity: 1;" href="assets/docs/vss_disrej_poster_2023.pdf">poster</a> -->
-                <!-- <p style="margin-bottom: 5px;margin-top: 15px;">Donaldson J.,<strong> Evdokimov A.</strong>, Wynn N., Park J. (2023, April 14). Identifying Links Between Human Values and Persuasion: an NLP Corpus Study [Symposium Poster]. University of Richmond Arts &amp; Sciences Symposium, Richmond, VA, United States.&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 63.5859px;height: 27px;font-size: 12px;" href="assets/docs/values_persuasion_2023.pdf">poster</a>
-                <p class="text-break" style="margin-bottom: 5px;margin-top: 15px;">Lowder M. W., Moe M., <strong>Evdokimov A.</strong> (2023, March 8-11). Immediate Processing Costs for Place-for-Institution Metonyms Appearing as Sentence Subjects [Conference Poster]. Human Sentence Processing 2023, Pittsburgh, PA, United States.&nbsp;</p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 65.5859px;height: 27px;font-size: 12px;margin-right: 10px;" href="assets/docs/hsp_metonymy_2023.pdf">abstract</a><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 63.5859px;height: 27px;font-size: 12px;backdrop-filter: opacity(0.23);-webkit-backdrop-filter: opacity(0.23);opacity: 1;" href="assets/docs/hsp_metonymy_poster_2023.pdf">poster</a>
-                <p style="margin-top: 15px;margin-bottom: 5px;"><strong>Evdokimov A.</strong>, Jarecki M., Levins C., Lowder M. W. (2022, December 8).&nbsp;<span style="color: rgb(13, 43, 72);">Repetition Priming and Repetition Costs During Sentence Reading [Symposium Poster]. University of Richmond Psychology Capstone Symposium, Richmond, VA, United States.</span></p><a class="btn btn-outline-secondary btn-sm" role="button" style="width: 63.5859px;height: 27px;font-size: 12px;" href="assets/docs/repetition_priming_2022.pdf">poster</a> -->
-                </div>
-                <a href="pub/">see all <i class="fa-solid fa-arrow-right"></i></a>
+      <h2 class="section-title">Research</h2>
+      coming soon...
+      
+      <div class="pub-list" style="display: none;">
+
+        <div class="pub-card">
+          <img class="pub-thumb"
+               src="projects/project1/thumb.jpg"
+               alt="Project 1 thumbnail"
+               onerror="this.style.background='#e8e8ed'"
+          />
+          <div class="pub-body">
+            <p class="pub-title">
+              <a href="projects/project1/index.html">
+                Your Paper Title Here: A Subtitle That Explains the Contribution
+              </a>
+            </p>
+            <p class="pub-authors">
+              <strong>Your Name</strong>, Co-Author One, Co-Author Two,
+              Advisor Name
+            </p>
+            <p class="pub-venue">SIGGRAPH 2025 (Under Submission)</p>
+            <div class="pub-links">
+              <a class="pub-link" href="#">Paper</a>
+              <span class="sep">·</span>
+              <a class="pub-link" href="#">Project Page</a>
+              <span class="sep">·</span>
+              <a class="pub-link" href="#">Code</a>
             </div>
-            <div class="col text-center order-first">
-                <h4 class="text-center" style="margin-bottom: 20px;">project highlights</h4>
-                <div class="card text-start d-inline-block justify-content-xxl-center" style="width: 322px;margin-bottom: 25px;"><img class="img-fluid card-img-top w-100 d-block" width="388" height="80" src="assets/img/dashboard.png">
-                    <div class="card-body text-start">
-                        <h5 class="card-title">Sound Dashboard</h5>
-                        <p class="card-text">A simple static site to upload and visualize sounds</p>
-                    </div>
-                    <a href="https://evdkv.github.io/proj/dashboard" class="stretched-link"></a>
-                </div>
-                <div class="card text-start d-inline-block" style="width: 322px;margin-bottom: 25px;height: 360px;"><img class="img-fluid card-img-top h-60 d-block" width="300" src="assets/img/tumbnail-seg.png" style="backdrop-filter: opacity(1) blur(0px);-webkit-backdrop-filter: opacity(1) blur(0px);">
-                    <div class="card-body">
-                        <h5 class="card-title">Semantic Map Segmentation</h5>
-                        <p class="card-text">A comparison of U-Net and FCN models for map segmentation</p>
-                    </div>
-                    <a href="https://evdkv.github.io/proj/map_segmentation" class="stretched-link"></a>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="pub-card">
+          <img class="pub-thumb"
+               src="projects/project2/thumb.jpg"
+               alt="Project 2 thumbnail"
+               onerror="this.style.background='#e8e8ed'"
+          />
+          <div class="pub-body">
+            <p class="pub-title">
+              <a href="projects/project2/index.html">
+                Another Project Title
+              </a>
+            </p>
+            <p class="pub-authors">
+              Co-Author One, <strong>Your Name</strong>, Advisor Name
+            </p>
+            <p class="pub-venue">In preparation</p>
+            <div class="pub-links">
+              <a class="pub-link" href="#">Paper (coming soon)</a>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
-    <footer class="text-center bg-dark" style="margin-top: 62px;">
-        <div class="container text-white py-4 py-lg-5">
-            <p class="text-muted mb-0">© Tolya Evdokimov</p>
+  </section>
+
+
+  <!-- ============================================================
+       NEWS
+       ============================================================ -->
+  <section id="news">
+    <div class="container">
+      <h2 class="section-title">Updates</h2>
+
+      <div class="news-list">
+        <!-- format is "Mon YYYY" | text -->
+        <div class="news-item">
+          <span class="news-date">Sep 2025</span>
+          <span class="news-text">
+            Started my PhD at Immersive Computing Lab, NYU Tandon. Excited to begin!
+          </span>
         </div>
-    </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+      </div>
+    </div>
+  </section>
+  <script src="components.js"></script>
 </body>
-
 </html>
