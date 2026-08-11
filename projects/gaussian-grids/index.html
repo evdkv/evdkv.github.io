@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Project Title — Your Name</title>
+
+  <!-- Path back to the shared stylesheet.
+       If this file lives in projects/project1/, use ../../style.css
+       If it lives at the root alongside index.html, use ./style.css  -->
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body data-root="../../">
+
+
+  <!-- ============================================================
+       PROJECT HERO
+       ============================================================ -->
+  <div class="container">
+    <header class="project-hero">
+
+      <p class="project-venue">IEEE/CVF WACV 2027</p>
+
+      <h1 class="project-title">
+        Frequency-Adaptive Gaussian Grids for Efficient Image Representation
+      </h1>
+
+      <p class="project-authors">
+        <strong>Anatolii Evdokimov</strong><sup>1</sup>,
+        <a href="#">Stavros Diolatzis</a><sup>2</sup>,
+        <a href="#">Bingxuan Li</a><sup>1</sup>,
+        <a href="#">Akshay Jindal</a><sup>2</sup>
+        <a href="#">Patsorn Sangkloy</a><sup>1</sup>
+        <a href="#">Qi Sun</a><sup>1</sup>
+      </p>
+      <p class="project-authors" style="font-size:14px; margin-top:-0.5rem;">
+        <sup>1</sup> New York University &nbsp;&nbsp;
+        <sup>2</sup> Intel Corporation
+      </p>
+
+      <div class="hero-links" style="margin-top:1.25rem;">
+        <a class="pill" href="#">
+          <!-- Paper / PDF icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0
+              2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+          </svg>
+          Paper (PDF)
+        </a>
+        <a class="pill" href="#">
+          <!-- Code icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6
+              1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+          </svg>
+          Code
+        </a>
+        <a class="pill" href="#">
+          <!-- Video icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 10.5V7a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v10a1 1 0 0 0
+              1 1h12a1 1 0 0 0 1-1v-3.5l4 4v-11l-4 4z"/>
+          </svg>
+          Video
+        </a>
+        <a class="pill" href="#">arXiv</a>
+      </div>
+
+    </header>
+  </div>
+
+
+  <!-- ============================================================
+       TEASER IMAGE
+       Best size: ~1400px wide, 16:9 or similar.
+       Replace src with your teaser figure.
+       ============================================================ -->
+  <div class="container">
+    <div class="teaser">
+      <img
+        src="teaser.jpg"
+        alt="Teaser figure for the paper"
+        onerror="this.style.background='#e8e8ed'; this.style.minHeight='300px';"
+      />
+      <p class="teaser-caption">
+        <strong>Figure 1.</strong>  Given [input], our method produces [output].
+        (Left) [Description of left panel].
+        (Right) [Description of right panel].
+        Our approach achieves X% improvement over prior work at Y fps.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       ABSTRACT
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <p class="section-label">Abstract</p>
+      <p class="abstract-text">
+        We present <strong>MethodName</strong>, a novel approach for [problem].
+        Existing methods struggle with [limitation]. Our key insight is that
+        [insight], which allows us to [contribution]. We demonstrate that
+        MethodName achieves state-of-the-art results on [benchmarks], with
+        [quantitative highlights]. Our approach is [X]× faster / more accurate
+        than [baseline], while [other advantage].
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       VIDEO 
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <p class="section-label">Video</p>
+      <div style="
+        position: relative;
+        padding-bottom: 56.25%;   /* 16:9 */
+        height: 0;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        max-width: 720px;
+      ">
+        <!-- EDIT: replace VIDEO_ID with your YouTube video ID -->
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID"
+          title="Paper video"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                 gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       METHOD
+       Describe your approach. Add/remove <h3> subsections as needed.
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <p class="section-label">Method</p>
+      <h2 class="section-title">Approach</h2>
+
+      <div class="content-block">
+        <!-- EDIT: method overview paragraph -->
+        <p>
+          Our pipeline takes [input] and produces [output] via three stages:
+          (1) [Stage one description]. (2) [Stage two description].
+          (3) [Stage three description].
+        </p>
+
+        <!-- EDIT: method figure -->
+        <figure style="margin: 1.75rem 0;">
+          <img
+            src="method.jpg"
+            alt="Method overview diagram"
+            style="border-radius: var(--radius-sm); border: 1px solid var(--border);"
+            onerror="this.style.background='#e8e8ed'; this.style.minHeight='220px';"
+          />
+          <figcaption style="margin-top:0.5rem; font-size:13px; color:var(--text-secondary);">
+            <!-- EDIT: method figure caption -->
+            <strong>Figure 2.</strong> Overview of our method. [Description].
+          </figcaption>
+        </figure>
+
+        <!-- EDIT: add more details about key technical contributions -->
+        <h3>Key Contribution</h3>
+        <p>
+          The core novelty of our approach is [explain in one paragraph].
+          Formally, given [notation], we optimize …
+        </p>
+
+        <h3>Implementation Details</h3>
+        <p>
+          We implement MethodName in PyTorch. Training takes approximately
+          [X] hours on [GPU]. At inference we achieve [Y] fps at [Z] resolution.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RESULTS
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <p class="section-label">Results</p>
+      <h2 class="section-title">Qualitative Results</h2>
+
+      <div class="figure-grid">
+
+        <!-- EDIT: result figure 1 -->
+        <div class="figure-item">
+          <img
+            src="results/result1.jpg"
+            alt="Result 1"
+            onerror="this.style.background='#e8e8ed'; this.style.minHeight='140px';"
+          />
+          <p class="figure-caption">Scene: [name]. Ours vs. [Baseline].</p>
+        </div>
+
+        <!-- EDIT: result figure 2 -->
+        <div class="figure-item">
+          <img
+            src="results/result2.jpg"
+            alt="Result 2"
+            onerror="this.style.background='#e8e8ed'; this.style.minHeight='140px';"
+          />
+          <p class="figure-caption">Scene: [name]. [Note about result].</p>
+        </div>
+
+        <!-- EDIT: result figure 3 -->
+        <div class="figure-item">
+          <img
+            src="results/result3.jpg"
+            alt="Result 3"
+            onerror="this.style.background='#e8e8ed'; this.style.minHeight='140px';"
+          />
+          <p class="figure-caption">Scene: [name]. [Note about result].</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BIBTEX
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <p class="section-label">Citation</p>
+      <div class="bibtex-block">
+        <pre>@inproceedings{yourname2025title,
+  title     = {Your Descriptive Paper Title Goes Here},
+  author    = {Your Name and Co-Author One and Co-Author Two and Advisor Name},
+  booktitle = {ACM SIGGRAPH 2025},
+  year      = {2025},
+  doi       = {10.1145/XXXXXXX.XXXXXXX}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ACKNOWLEDGEMENTS 
+       ============================================================ -->
+  <section>
+    <div class="container">
+      <p class="section-label">Acknowledgements</p>
+      <div class="content-block">
+        <p style="font-size:15px; color:var(--text-secondary);">
+          <!-- EDIT: funding sources, helpful colleagues, compute clusters, etc. -->
+          This work was supported by [Grant/Fellowship]. We thank
+          [Name(s)] for [reason]. Compute was provided by [cluster/cloud].
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer injected by components.js -->
+  <script src="../../components.js"></script>
+
+</body>
+</html>
