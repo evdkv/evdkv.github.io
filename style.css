@@ -17,13 +17,13 @@
   /* --- Typography --- */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
                "Helvetica Neue", Arial, sans-serif;
-  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+  --font-display: "Space Grotesk", -apple-system, BlinkMacSystemFont,
                   "Helvetica Neue", Arial, sans-serif;
   --font-mono: "SF Mono", ui-monospace, "Fira Code", monospace;
 
   /* --- Layout --- */
   --max-width:    860px;
-  --section-gap:  5rem;
+  --section-gap:  3.5rem;
   --radius:       12px;
   --radius-sm:    8px;
 }
@@ -51,16 +51,6 @@ a:hover { text-decoration: underline; }
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
-}
-
-.section-label {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
 }
 
 /* Navigation */
@@ -110,13 +100,13 @@ nav {
 
 /* Hero */
 .hero {
-  padding: 5rem 0 1rem;
+  padding: 3.5rem 0 0.5rem;
 }
 
 .hero-inner {
   display: flex;
   align-items: flex-start;
-  gap: 3rem;
+  gap: 2.25rem;
 }
 
 /* Profile photo — replace src in HTML */
@@ -184,13 +174,28 @@ nav {
   text-decoration: none;
 }
 
-.pill svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+.pill svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* Sections */
 section { padding: var(--section-gap) 0; }
 
 section + section {
+  position: relative;
+}
+
+section + section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-width);
   border-top: 1px solid var(--border);
+}
+
+#about {
+  padding-top: 1.75rem;
 }
 
 .section-title {
@@ -203,7 +208,7 @@ section + section {
 
 /* About */
 .about-text {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--text);
   max-width: 680px;
@@ -257,7 +262,7 @@ section + section {
 
 /* Publications / Projects */
 .pub-subsection + .pub-subsection {
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
 }
 
 .pub-subtitle {
@@ -265,13 +270,13 @@ section + section {
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .pub-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
 .pub-card {
@@ -293,7 +298,7 @@ section + section {
 .pub-body {}
 
 .pub-title {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 16px;
   font-weight: 600;
   color: var(--text);
@@ -308,10 +313,25 @@ section + section {
 }
 
 .pub-venue {
-  font-size: 14px;
-  font-style: italic;
-  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   margin-bottom: 0.6rem;
+  overflow: hidden;
+}
+
+.pub-venue .venue-name,
+.pub-venue .venue-type {
+  padding: 0.15rem 0.5rem;
+}
+
+.pub-venue .venue-type {
+  border-left: 1px solid rgba(26, 86, 219, 0.3);
 }
 
 .pub-links {
@@ -321,12 +341,15 @@ section + section {
 }
 
 .pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
   font-size: 13px;
   font-weight: 500;
   color: var(--accent);
   padding: 0.15rem 0;
 }
-.pub-link::after { content: " →"; }
+.pub-link svg { width: 13px; height: 13px; flex-shrink: 0; }
 .pub-link:hover { text-decoration: underline; }
 
 /* Separator between pub links */
@@ -381,14 +404,14 @@ footer {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   max-width: 720px;
 }
 
 .project-authors {
   font-size: 16px;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
   line-height: 1.6;
 }
 

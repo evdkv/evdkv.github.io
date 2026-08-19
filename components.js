@@ -8,10 +8,10 @@ const SITE = {
   cv:    'YOUR_CV.pdf',               
   year:  '2026',                      
 
-  navLinks: [                         
+  navLinks: [
     { label: 'About',    anchor: '#about'    },
+    { label: 'Updates',  anchor: '#news'     },
     { label: 'Research', anchor: '#research' },
-    { label: 'News',     anchor: '#news'     },
   ],
 };
 
