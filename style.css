@@ -352,6 +352,18 @@ section + section::before {
 .pub-link svg { width: 13px; height: 13px; flex-shrink: 0; }
 .pub-link:hover { text-decoration: underline; }
 
+.pub-link-placeholder {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 13px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-secondary);
+  padding: 0.15rem 0;
+}
+.pub-link-placeholder svg { width: 13px; height: 13px; flex-shrink: 0; }
+
 /* Separator between pub links */
 .pub-links .sep {
   color: var(--border);
