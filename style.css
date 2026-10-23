@@ -216,6 +216,25 @@ section + section::before {
 
 .about-text p + p { margin-top: 1rem; }
 
+/* Alert / callout box */
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 680px;
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--tag-text);
+  border-radius: var(--radius);
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.alert svg { width: 20px; height: 20px; flex-shrink: 0; }
+
 /* Research interests tags */
 .tags {
   display: flex;
