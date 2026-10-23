@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Project Title — Your Name</title>
+  <title>Gaussian-Grid - Project Page</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,9 @@
        If this file lives in projects/project1/, use ../../style.css
        If it lives at the root alongside index.html, use ./style.css  -->
   <link rel="stylesheet" href="../../style.css?v=2" />
+  <style>
+    .abstract-text, .content-block { max-width: none; }
+  </style>
 </head>
 <body data-root="../../">
 
@@ -32,11 +35,11 @@
 
       <p class="project-authors">
         <strong>Anatolii Evdokimov</strong><sup>1</sup>,
-        <a href="#">Stavros Diolatzis</a><sup>2</sup>,
-        <a href="#">Bingxuan Li</a><sup>1</sup>,
-        <a href="#">Akshay Jindal</a><sup>2</sup>
-        <a href="#">Patsorn Sangkloy</a><sup>1</sup>
-        <a href="#">Qi Sun</a><sup>1</sup>
+        <a href="https://sdiolatz.info">Stavros Diolatzis</a><sup>2</sup>,
+        <a href="https://bingxuan-li.github.io/">Bingxuan Li</a><sup>1</sup>,
+        <a href="https://akshayjindal.com/">Akshay Jindal</a><sup>2</sup>,
+        <a href="https://patsorn.me">Patsorn Sangkloy</a><sup>1</sup>,
+        <a href="https://qisun.me">Qi Sun</a><sup>1</sup>
       </p>
       <p class="project-authors" style="font-size:14px; margin-top:-0.5rem;">
         <sup>1</sup> New York University &nbsp;&nbsp;
@@ -44,22 +47,17 @@
       </p>
 
       <div class="hero-links" style="margin-top:0.5rem;">
-        <a class="pill" href="#">
+        <a class="pill" href="#" style="opacity:0.45; pointer-events:none; cursor:default;" aria-disabled="true" tabindex="-1">
           <!-- Paper / PDF icon -->
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
           Paper (PDF)
         </a>
-        <a class="pill" href="#">
+        <a class="pill" href="https://github.com/NYU-ICL/gaussian-grid">
           <!-- Code icon -->
           <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
           Code
         </a>
-        <a class="pill" href="#">
-          <!-- Video icon -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg>
-          Video
-        </a>
-        <a class="pill" href="#">arXiv</a>
+        <a class="pill" href="#" style="opacity:0.45; pointer-events:none; cursor:default;" aria-disabled="true" tabindex="-1">arXiv</a>
       </div>
 
     </header>
@@ -74,15 +72,12 @@
   <div class="container">
     <div class="teaser">
       <img
-        src="teaser.jpg"
+        src="../../assets/gaussian-grids/gaussian-grid-teaser.png"
         alt="Teaser figure for the paper"
         onerror="this.style.background='#e8e8ed'; this.style.minHeight='300px';"
       />
       <p class="teaser-caption">
-        <strong>Figure 1.</strong>  Given [input], our method produces [output].
-        (Left) [Description of left panel].
-        (Right) [Description of right panel].
-        Our approach achieves X% improvement over prior work at Y fps.
+        <strong>Figure 1.</strong> Gaussian-Grid leverages a Gaussian-defined feature grid layout that is guided by the image frequency map to generate high-quality reconstructions.
       </p>
     </div>
   </div>
@@ -95,42 +90,21 @@
     <div class="container">
       <h2 class="section-title">Abstract</h2>
       <p class="abstract-text">
-        We present <strong>MethodName</strong>, a novel approach for [problem].
-        Existing methods struggle with [limitation]. Our key insight is that
-        [insight], which allows us to [contribution]. We demonstrate that
-        MethodName achieves state-of-the-art results on [benchmarks], with
-        [quantitative highlights]. Our approach is [X]× faster / more accurate
-        than [baseline], while [other advantage].
+        Neural representation has emerged as a powerful tool to mitigate the demand for increasingly
+        higher-resolution images. However, a fundamental trade-off remains between structured
+        (e.g., feature grids, which offer spatial consistency) and unstructured (e.g., 2D Gaussians,
+        which adaptively capture local variances) representations. Here, we present
+        <strong>Gaussian-Grid</strong>, a hybrid neural representation that adaptively integrates
+        structured and unstructured primitives. By dynamically partitioning computation between 2D
+        Gaussian distributions and their attached multi-resolution feature grids based on the local
+        frequency content, Gaussian-Grid automatically optimizes its architecture to match the
+        underlying complexity of the target signal. We evaluate our approach on high-resolution
+        natural images and demonstrate its application as GPU-native dataset storage, showing
+        1.24&ndash;2.14&times; decoding speed improvement and PCIe data traffic reduction of
+        23&times;&ndash;176&times; over JPEG + ZIP data archiving. The results show that
+        Gaussian-Grid maintains small memory footprints while achieving high reconstruction
+        fidelity across a variety of datasets.
       </p>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       VIDEO 
-       ============================================================ -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Video</h2>
-      <div style="
-        position: relative;
-        padding-bottom: 56.25%;   /* 16:9 */
-        height: 0;
-        border-radius: var(--radius);
-        overflow: hidden;
-        border: 1px solid var(--border);
-        max-width: 720px;
-      ">
-        <!-- EDIT: replace VIDEO_ID with your YouTube video ID -->
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID"
-          title="Paper video"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-                 gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
     </div>
   </section>
 
@@ -144,39 +118,26 @@
       <h2 class="section-title">Approach</h2>
 
       <div class="content-block">
-        <!-- EDIT: method overview paragraph -->
         <p>
-          Our pipeline takes [input] and produces [output] via three stages:
-          (1) [Stage one description]. (2) [Stage two description].
-          (3) [Stage three description].
+          Gaussian-Grid represents an image as a collection of 2D Gaussians that each carry an
+          embedded feature grid. The Gaussians act as a substrate that captures global geometric
+          structure and anchors high-capacity feature grids only where local signal complexity
+          demands them. A global canvas grid covers smooth, low-frequency content, and a lightweight
+          2-layer MLP decodes the blended features into pixel values. Training has two stages:
+          (1) optimize Gaussians to match a local frequency map of the image, then
+          (2) attach feature grids of appropriate resolution and optimize them against the image.
         </p>
 
-        <!-- EDIT: method figure -->
         <figure style="margin: 1.75rem 0;">
           <img
-            src="method.jpg"
+            src="../../assets/gaussian-grids/method.png"
             alt="Method overview diagram"
             style="border-radius: var(--radius-sm); border: 1px solid var(--border);"
-            onerror="this.style.background='#e8e8ed'; this.style.minHeight='220px';"
           />
           <figcaption style="margin-top:0.5rem; font-size:13px; color:var(--text-secondary);">
-            <!-- EDIT: method figure caption -->
-            <strong>Figure 2.</strong> Overview of our method. [Description].
+            <strong>Figure 2.</strong> Overview of our method. Gaussian-Grid optimizes 2D Gaussian primitives to a spatial frequency map derived from the target image. The Gaussians are then used to place feature grids of variable resolutions aligned with the underlying frequency of the content. Finally, the feature grids are optimized to reconstruct the image.
           </figcaption>
         </figure>
-
-        <!-- EDIT: add more details about key technical contributions -->
-        <h3>Key Contribution</h3>
-        <p>
-          The core novelty of our approach is [explain in one paragraph].
-          Formally, given [notation], we optimize …
-        </p>
-
-        <h3>Implementation Details</h3>
-        <p>
-          We implement MethodName in PyTorch. Training takes approximately
-          [X] hours on [GPU]. At inference we achieve [Y] fps at [Z] resolution.
-        </p>
       </div>
     </div>
   </section>
@@ -187,39 +148,75 @@
        ============================================================ -->
   <section>
     <div class="container">
-      <h2 class="section-title">Qualitative Results</h2>
+      <h2 class="section-title">Results</h2>
 
-      <div class="figure-grid">
+      <div class="content-block">
+        <p>
+          We evaluate on 100 validation images from DIV2K and 41 from CLIC2020, comparing against
+          Image-GS, GaussianImage, SAD and Instant-NGP across 0.1&ndash;1.0 bpp. At 0.1 bpp,
+          Gaussian-Grid reaches 25.58 dB PSNR on DIV2K (+0.86 dB over the next-best SAD) and
+          27.70 dB on CLIC2020 (+0.75 dB). It avoids the &ldquo;oil painting&rdquo; artifacts of
+          primitive-based methods, while Instant-NGP shows noise-like patterns from hash collisions.
+          Columns below show error-map insets at 0.1 bpp.
+        </p>
+      </div>
 
-        <!-- EDIT: result figure 1 -->
+      <h3 style="margin-top:1.5rem;">Qualitative Comparison (DIV2K, 0.1 bpp)</h3>
+      <div class="figure-grid" style="grid-template-columns: repeat(6, 1fr); gap: 0.4rem;">
+
         <div class="figure-item">
-          <img
-            src="results/result1.jpg"
-            alt="Result 1"
-            onerror="this.style.background='#e8e8ed'; this.style.minHeight='140px';"
-          />
-          <p class="figure-caption">Scene: [name]. Ours vs. [Baseline].</p>
+          <img src="../../assets/gaussian-grids/q_01_i_ngp.png" alt="I-NGP" />
+          <p class="figure-caption" style="text-align:center;">I-NGP</p>
         </div>
 
-        <!-- EDIT: result figure 2 -->
         <div class="figure-item">
-          <img
-            src="results/result2.jpg"
-            alt="Result 2"
-            onerror="this.style.background='#e8e8ed'; this.style.minHeight='140px';"
-          />
-          <p class="figure-caption">Scene: [name]. [Note about result].</p>
+          <img src="../../assets/gaussian-grids/q_02_gi.png" alt="GI" />
+          <p class="figure-caption" style="text-align:center;">GI</p>
         </div>
 
-        <!-- EDIT: result figure 3 -->
         <div class="figure-item">
-          <img
-            src="results/result3.jpg"
-            alt="Result 3"
-            onerror="this.style.background='#e8e8ed'; this.style.minHeight='140px';"
-          />
-          <p class="figure-caption">Scene: [name]. [Note about result].</p>
+          <img src="../../assets/gaussian-grids/q_03_sad.png" alt="SAD" />
+          <p class="figure-caption" style="text-align:center;">SAD</p>
         </div>
+
+        <div class="figure-item">
+          <img src="../../assets/gaussian-grids/q_04_image_gs.png" alt="Image-GS" />
+          <p class="figure-caption" style="text-align:center;">Image-GS</p>
+        </div>
+
+        <div class="figure-item">
+          <img src="../../assets/gaussian-grids/q_05_ours.png" alt="Ours" />
+          <p class="figure-caption" style="text-align:center;">Ours</p>
+        </div>
+
+        <div class="figure-item">
+          <img src="../../assets/gaussian-grids/q_06_gt_crop.png" alt="Ref. crop" />
+          <p class="figure-caption" style="text-align:center;">Ref. crop</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2rem;">Application: GPU-Native Dataset Archiver</h3>
+      <div class="content-block">
+        <p>
+          Because our representation decodes directly on the GPU, it avoids CPU-side JPEG/ZIP
+          decoding and the PCIe transfer of full pixel grids. On the DIV2K validation set (NVIDIA
+          RTX 5080), at 0.1 bpp Gaussian-Grid gives +2.33 dB PSNR over size-matched JPEG,
+          decodes in 5.44 ms vs. 11.65 ms (2.14&times; faster), and transfers 47 KB over PCIe
+          instead of 8,306 KB (176&times; less). The decode speedup holds at all budgets
+          (1.24&ndash;2.14&times;) and PCIe reduction stays at 23&times;&ndash;176&times;. JPEG
+          wins on PSNR above 0.4 bpp, so this targets GPU-only pipelines at low bitrates, such as
+          retrieval, previews and thumbnail caching.
+        </p>
+      </div>
+
+      <h3 style="margin-top:2rem;">Limitations</h3>
+      <div class="content-block">
+        <p>
+          Gains depend on spatially heterogeneous frequency content; as frequency becomes uniform,
+          allocation approaches the uniform baseline, and perceptual metrics such as LPIPS may not
+          follow PSNR gains. Encoding is per-image optimization (about 24.3 min per image), so the
+          method suits write-once, read-many storage.
+        </p>
       </div>
     </div>
   </section>
@@ -231,32 +228,7 @@
   <section>
     <div class="container">
       <h2 class="section-title">Citation</h2>
-      <div class="bibtex-block">
-        <pre>@inproceedings{yourname2025title,
-  title     = {Your Descriptive Paper Title Goes Here},
-  author    = {Your Name and Co-Author One and Co-Author Two and Advisor Name},
-  booktitle = {ACM SIGGRAPH 2025},
-  year      = {2025},
-  doi       = {10.1145/XXXXXXX.XXXXXXX}
-}</pre>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ============================================================
-       ACKNOWLEDGEMENTS 
-       ============================================================ -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Acknowledgements</h2>
-      <div class="content-block">
-        <p style="font-size:15px; color:var(--text-secondary);">
-          <!-- EDIT: funding sources, helpful colleagues, compute clusters, etc. -->
-          This work was supported by [Grant/Fellowship]. We thank
-          [Name(s)] for [reason]. Compute was provided by [cluster/cloud].
-        </p>
-      </div>
+      <p style="font-size:15px; color:var(--text-secondary);">Citation to be added.</p>
     </div>
   </section>
 
